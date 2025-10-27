@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fantasma AR - MindAR Definitivo</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Teste de Realidade Aumentada - HIRO</title>
     
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     
-    <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
     
-    <style>
-        body { margin: 0; overflow: hidden; }
-        .ar-container { height: 100vh; width: 100vw; } 
-    </style>
-</head>
+        <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    
+        <style>
+            /* Certifique-se de que a tela ocupe 100% da área, o que é essencial para o AR.js */
+            body { margin: 0; overflow: hidden; }
+        </style>
+    </head>
 
-<body>
-    <a-scene 
-        mindar-image="imageTargetSrc: https://grsandri.github.io/Fantasma-AR/targets.mind; maxTrack: 1" 
-        color-space="sRGB" 
-        renderer="colorManagement: true, physicallyCorrectLights: true"
-        vr-mode-ui="enabled: false" 
-        device-orientation-permission-ui="enabled: false"
-        debug="true"> 
+<body style="margin: 0px; overflow: hidden;">
+    
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+<a-scene embedded arjs='sourceType: webcam;  
+                       debugUIEnabled: true;'>
 
-        <a-assets>
-            <a-asset-item id="robot-modelo" 
-                          src="https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb">
-            </a-asset-item>
-        </a-assets>
+    <a-nft type='nft' url='[nome-base-da-imagem]' smooth="true" smoothCount="10" smoothTolerance=".01">
+        <a-entity
+            gltf-model="#robot-modelo"
+            scale="100 100 100"  position="0 0 0" 
+            animation-mixer="clip: Dance" 
+        ></a-entity>
+    </a-nft>
 
-        
+    <a-entity camera></a-entity>
 
-        <a-entity mindar-image-target="targetIndex: 0">
-
-            <a-entity
-                gltf-model="#robot-modelo" 
-                scale="0.2 0.2 0.2"             
-                position="0 0 0.1"             
-                animation-mixer="clip: Dance" 
-            ></a-entity>
-            
-        </a-entity>
-
-    </a-scene>
+</a-scene>
 </body>
+</html>>>
 </html>
