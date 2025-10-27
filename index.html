@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teste de Realidade Aumentada - Cone Otimizado</title>
+    
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0px; overflow: hidden;">
+    
+    <a-scene embedded arjs='sourceType: webcam; 
+                           detectionMode: mono; 
+                           patternRatio: 0.5; 
+                           maxDetectionRate: 30; 
+                           debugUIEnabled: false;'> 
+
+        <a-assets>
+            <a-asset-item id="cone-modelo" 
+                          src="https://cdn.glitch.global/40b7ed8c-5f85-49dd-afb5-d509594a8ac2/Cone_orange_animated.glb?v=1683214533662">
+            </a-asset-item>
+        </a-assets>
+
+        <a-marker type='pattern' url='marker.patt'>
+            
+            <a-entity
+                gltf-model="#cone-modelo" 
+                scale="1 1 1"                 position="0 0 0"              animation-mixer="clip: *"     ></a-entity>
+
+        </a-marker>
+
+        <a-entity camera></a-entity>
+
+    </a-scene>
+</body>
+</html>
