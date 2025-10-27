@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Teste de Realidade Aumentada - Cone Otimizado</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Teste de Realidade Aumentada - HIRO</title>
     
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-</head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
+    
+        <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    
+        <style>
+            /* Certifique-se de que a tela ocupe 100% da área, o que é essencial para o AR.js */
+            body { margin: 0; overflow: hidden; }
+        </style>
+    </head>
 
 <body style="margin: 0px; overflow: hidden;">
     
-    <a-scene embedded arjs='sourceType: webcam; 
-                           detectionMode: mono; 
-                           patternRatio: 0.5; 
-                           maxDetectionRate: 30; 
-                           debugUIEnabled: true;'> 
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true;'> 
 
         <a-assets>
-    <a-asset-item id="robot-modelo" 
-                  src="https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb">
-    </a-asset-item>
-</a-assets>
-
-<a-marker preset='hiro'>
-    <a-entity
-        gltf-model="#robot-modelo" 
-        scale="0.5 0.5 0.5" 
-        position="0 0.5 0" 
-        animation-mixer="clip: Idle" 
-    ></a-entity>
-</a-marker>
-
+            <a-asset-item id="robot-modelo" 
+                          src="https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb">
+            </a-asset-item>
+        </a-assets>
+    
+        <a-marker preset='hiro'>
+            <a-entity
+                gltf-model="#robot-modelo" 
+                scale="0.5 0.5 0.5" 
+                position="0 0.5 0" 
+                animation-mixer="clip: Dance" 
+            ></a-entity>
+        </a-marker>
+    
         <a-entity camera></a-entity>
-
+    
     </a-scene>
 </body>
 </html>
