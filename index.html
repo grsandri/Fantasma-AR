@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fantasia de Fantasma AR - MindAR Funcional</title>
+    <title>Fantasma AR - MindAR Definitivo</title>
+    
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
     
     <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image-aframe.prod.js"></script>
-    
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
     
     <style>
         body { margin: 0; overflow: hidden; }
@@ -20,12 +19,14 @@
 
 <body>
     <a-scene 
-        mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1" 
+        mindar-image="imageTargetSrc: https://grsandri.github.io/Fantasma-AR/targets.mind; maxTrack: 1" 
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights: true"
         vr-mode-ui="enabled: false" 
         device-orientation-permission-ui="enabled: false"
-        debug="true"> <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        debug="true"> 
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-assets>
             <a-asset-item id="robot-modelo" 
