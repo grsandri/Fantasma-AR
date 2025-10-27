@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fantasia de Fantasma AR - MindAR</title>
+    <title>Fantasia de Fantasma AR - MindAR Funcional</title>
     
     <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image.prod.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/mindar-image@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.3.0/dist/aframe-extras.min.js"></script> 
+    
     <style>
         body { margin: 0; overflow: hidden; }
-        /* Garante que a cena ocupe toda a tela */
         .ar-container { height: 100vh; width: 100vw; } 
     </style>
 </head>
@@ -24,15 +24,23 @@
         color-space="sRGB" 
         renderer="colorManagement: true, physicallyCorrectLights: true"
         vr-mode-ui="enabled: false" 
-        device-orientation-permission-ui="enabled: false">
+        device-orientation-permission-ui="enabled: false"
+        debug="true"> <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-assets>
+            <a-asset-item id="robot-modelo" 
+                          src="https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb">
+            </a-asset-item>
+        </a-assets>
+
 
         <a-entity mindar-image-target="targetIndex: 0">
 
             <a-entity
-                gltf-model="url(https://threejs.org/examples/models/gltf/RobotExpressive/RobotExpressive.glb)"
-                scale="0.2 0.2 0.2"             position="0 0 0.1"             animation-mixer="clip: Dance" 
+                gltf-model="#robot-modelo" 
+                scale="0.2 0.2 0.2"             
+                position="0 0 0.1"             
+                animation-mixer="clip: Dance" 
             ></a-entity>
             
         </a-entity>
